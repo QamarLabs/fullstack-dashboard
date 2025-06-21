@@ -1,19 +1,23 @@
-import { Controller, Get, Query, Res } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, HttpStatus, Post, Query, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Response } from 'express';
+import { RegisterDto } from './auth/register.dto';
+import { LoginDto } from './auth/login.dto';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Post('register')
+  @HttpCode(HttpStatus.CREATED)
+  async register(@Body() registerDto: RegisterDto) {
+    return this.appService.register(registerDto);
   }
 
-  @Get('hello')
-  async getHelloWithName(@Query('name') name: string, @Res() res: Response) {
-    const response = await this.appService.getHelloWithName(name);
-    res.json(response);
+  @Post('login')
+  @HttpCode(HttpStatus.OK)
+  async login(@Body() loginDto: LoginDto) {
+    return this.appService.login(loginDto);
   }
+
 }

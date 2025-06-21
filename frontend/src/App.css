@@ -1,64 +1,45 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    font-family: "Roboto", sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+th, td {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  .dark {
-    display: none; /* Hide light logo in light mode */
-  }
+.flex33Percent {
+    background-color: aliceblue !important;
 }
 
 
-@media (prefers-color-scheme: light) {
-  .light {
-    display: none; /* Hide dark logo in dark mode */
-  }
+.info-button {
+    top: 0 !important;
+    background-color: transparent !important;
+    color: black;
 }
 
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.info-button.center-icon {
+    top: unset !important;
+    text-align: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info-button.center-icon  > * {
+    transform: scale(2.5) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.primary-button {
+    background-color: oklch(62.3% .214 259.815) !important;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.input-box {
-  width: 25%;
-  border-radius: 5px;
-  box-shadow: none !important;
-  border: 2px solid #888;
-  padding: 10px;
+input {
+    color: black !important;
 }
